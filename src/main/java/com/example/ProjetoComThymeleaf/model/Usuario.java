@@ -4,8 +4,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Lob;
 import java.util.Collection;
 
+@Entity
 public class Usuario extends
         ModeloGenerico
         implements UserDetails {
@@ -25,6 +28,10 @@ public class Usuario extends
     @Column(name = "idade")
 
     private Integer idade ;
+
+    @Lob
+    @Column(name = "imagem")
+    private byte[] imagem;
     public String getNome() {
         return nome;
     }
