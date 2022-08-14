@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class EndPointUsuario {
+public class UsuarioController {
     private UsuarioRepositorio usuarioRepositorio;
     @Autowired
-    public EndPointUsuario(UsuarioRepositorio repositorio)
+    public UsuarioController(UsuarioRepositorio repositorio)
     {
         this.usuarioRepositorio = repositorio;
     }
@@ -26,7 +26,7 @@ public class EndPointUsuario {
     }
     @PostMapping("login")
     public ModelAndView salvaUsuario(Usuario usuario){
-        ModelAndView md = new ModelAndView("pagina-inicial");
+        ModelAndView md = new ModelAndView("redirect:/");
         ConferirUSER(usuario.getId());
         this.usuarioRepositorio.save(usuario);
         return md;

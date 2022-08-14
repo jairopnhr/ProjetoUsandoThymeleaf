@@ -34,7 +34,7 @@ private Integer idade;
         Usuario usuario = new Usuario();
         usuario.setEmail(this.email);
         usuario.setNome(this.nome);
-        usuario.setIdade(this.idade);
+
         return usuario;
     }
 }
